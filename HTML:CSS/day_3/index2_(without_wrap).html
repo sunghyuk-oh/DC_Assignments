@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Phone Generations</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #menu ul {
+            background-color: #333;    
+            list-style: none;
+            display: flex;
+            }
+
+            #menu li {
+                padding: 20px;
+                color: white;
+            }
+
+            #all-phones{
+                display: flex;
+                flex-direction: row;
+            }
+
+            #main-content {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-top: 50px;
+                margin-right: 40px;
+                /* flex-wrap: wrap; */
+            }
+
+            #main-content2 {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin-top: 50px;
+                margin-right: 40px;
+                /* flex-wrap: wrap; */
+            }
+
+            .phone p {
+                text-align: center;
+            }
+
+            img {
+                width: 200px;
+                height: 250px;
+            }
+
+            @media (min-width: 481px) and (max-width: 767px) {
+                #all-phones {
+                    display: block;
+                }
+                
+                #main-content {
+                    flex-direction: row;
+                    
+                }
+
+                #main-content2 {
+                    flex-direction: row;
+                }
+            }
+
+            @media (min-width: 320px) and (max-width: 480px) {
+                #all-phones {
+                    display: block;
+                }
+                
+                #menu ul {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                #main-content {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                #main-content2 {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            
+            <div id="menu">
+                <ul>
+                    <li>Apple</li>
+                    <li>Samsung</li>
+                </ul>
+            </div> <!-- menu -->
+            
+            <div id="all-phones">
+                <div id="main-content">
+                    <div class="phone">
+                        <img src="imgs/iPhone7.png">
+                        <p>iPhone 7</p>
+                    </div>
+                    <div class="phone">
+                        <img src="imgs/iPhone8.png">
+                        <p>iPhone 8</p>
+                    </div>
+                    <div class="phone">
+                        <img src="imgs/iPhoneX.png">
+                        <p>iPhone X</p>
+                    </div>
+                </div> <!-- main-content 1 -->
+
+                <div id="main-content2">
+                    <div class="phone">
+                        <img src="imgs/iPhoneSE.png">
+                        <p>iPhone SE</p>
+                    </div>
+                    <div class="phone">
+                        <img src="imgs/iPhone11.png">
+                        <p>iPhone 11</p>
+                    </div>
+                    <div class="phone">
+                        <img src="imgs/iPhon12_pro.png">
+                        <p>iPhone 12</p>
+                    </div>
+                </div> <!-- main-content 2 -->
+            </div>
+
+        </div>   <!-- container -->
+    </body>
+</html>

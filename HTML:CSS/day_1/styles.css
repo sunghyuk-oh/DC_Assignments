@@ -1,0 +1,56 @@
+body {
+    background-image: url(imgs/back-img.jpg!d);
+    font-family: Sans-Serif;
+    line-height: 1.5em;
+}
+
+#nav {
+    display: block;
+    height: 10%;
+}
+
+#nav li {
+    display: inline;
+    float: left;
+}
+
+#nav li a {
+    display: block;
+    padding: 10px;
+    color: white;
+}
+
+#header {
+    padding-top: 50px;
+    height: 100px;
+}
+
+#header h1 {
+    text-align: center;
+    color: white;
+}
+
+main {
+    width: 100%;
+}
+
+
+.main-content {
+    padding: 100px;
+    text-align: center;
+}
+
+img {
+    width: 700px;
+    height: 500px;
+}
+
+h2 {
+    padding: 50px;
+    color: white;
+}
+p {
+    color: white;
+    padding-top: 30px;
+}
+

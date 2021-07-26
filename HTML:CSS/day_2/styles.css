@@ -1,0 +1,89 @@
+#main {
+    background-color: rgb(180, 216, 202);
+    width: 120vh;
+    height: 73vh;
+    
+}
+
+#score-frame {
+    background-color: black;
+    height: 3vh;
+}
+
+#score-frame h3{
+    color: rgb(180, 216, 202);;
+    padding-left: 80vh;
+    justify-content: center;
+}
+
+#content {
+    background-color: black;
+    margin: 20px;    
+}
+
+.black tr th {
+    background-color: black;
+    width: 10vh;
+    height: 3vh;
+}
+
+#red tr th {
+    background-color: red;
+    width: 10vh;
+    height: 3vh;
+}
+
+#yellow tr th {
+    background-color: yellow;
+    width: 10vh;
+    height: 3vh;
+}
+
+#green tr th {
+    background-color: green;
+    width: 10vh;
+    height: 3vh;
+}
+
+#blue tr th {
+    background-color: blue;
+    width: 10vh;
+    height: 3vh;
+}
+
+.yellow-black {
+    background-color: black !important;
+}
+
+#small-dot1 {
+    width: 1.5vh;
+    height: 1.5vh;
+    position: relative;
+    top: -6;
+    background-color: rgb(224, 224, 224);
+}
+
+#small-dot2 {
+    width: 1.5vh;
+    height: 1.5vh;
+    position: relative;
+    top: -6;
+    left: 70;
+    background-color: rgb(224, 224, 224);
+}
+
+#small-dot3 {
+    width: 1.5vh;
+    height: 1.5vh;
+    position: relative;
+    top: -6;
+    left: 70;
+    background-color: rgb(224, 224, 224);
+}
+
+#bottom-space {
+    width: 20vh;
+    position: relative;
+    left: 30;
+    background-color: rgb(224, 224, 224);
+}

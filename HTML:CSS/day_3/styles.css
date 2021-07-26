@@ -1,0 +1,45 @@
+#menu ul {
+    background-color: #333;    
+    list-style: none;
+    display: flex;
+}
+
+#menu li {
+    padding: 20px;
+    color: white;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-right: 40px;
+    flex-wrap: wrap; 
+}
+
+.phone p {
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    height: 250px;
+}
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+    #menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
