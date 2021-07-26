@@ -128,6 +128,7 @@ console.log('----------------------------------------')
 //   - User should be able to transfer money from one bank account to another  
 //   - A user should be able to withdraw money from the bank account 
 //   - The app should charge $35 fees if the bank account is below $0
+
 class BankAccount {
     constructor(firstName, lastName, middleName, accountType) {
         this.firstName = firstName
@@ -135,11 +136,22 @@ class BankAccount {
         this.middleName = middleName
         this.accountTypee = accountType
         this.balance = 0
-        this.status = "Open"
+        this.status = null
+    }
+
+    open() {
+        if (this.balance >= 100) {
+            this.status = "Opened"
+            console.log(`Your account has been opened.`)
+        } else {
+            this.status = "Closed"
+            console.log("Insufficient balance to open the account. Please deposit more than $100 into the account.")
+        }
     }
 
     deposit(amt) {
         this.balance += amt
+
         console.log(`The amount of $${amt} deposit Successful. Balance: $${this.balance}`)
     }
 
@@ -160,7 +172,7 @@ class BankAccount {
 
     checkBalance() {
         if (this.balance <= 0) {
-            this.status = "Freeze"
+            this.status = "Closed"
             console.log(`You have $${this.balance} amount in the account. Penalty Charge: $35. Account Status: ${this.status}.`)
             this.balance -= 35
         }
@@ -168,8 +180,8 @@ class BankAccount {
     }
 }
 
-acct1 = new BankAccount("John", "Doe", null, "Debit")
-acct2 = new BankAccount("John", "Doe", null, "Debit")
+let acct1 = new BankAccount("John", "Doe", null, "Debit")
+let acct2 = new BankAccount("John", "Doe", null, "Debit")
 acct1.deposit(100)
 acct1.withdraw(30)
 acct1.transfer(50, acct2)
