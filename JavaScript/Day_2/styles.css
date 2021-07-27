@@ -1,0 +1,46 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#container {
+    margin: 30px;
+}
+
+#addTask label {
+    padding-right: 2%;
+    font-size: small;
+}
+
+#addTask button {
+    margin-left: 1%;
+    background-color: rgb(43, 182, 224);
+    color: white;
+    border: none;
+}
+
+.box {
+    background-color: rgb(43, 182, 224);
+    width: 20%;
+    padding: 1%;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.box input {
+    margin-right: 5%;
+}
+
+.box label {
+    margin-right: 10%;
+    color: white;
+}
+
+.box button {
+    background-color: rgb(43, 182, 224);
+    color: white;
+    margin-left: 10%;
+    border: none;
+}
