@@ -5,7 +5,7 @@ const boxContainer2 = document.getElementById("box-container2")
 
 // Trigger the Add button
 addButton.addEventListener("click", function() {
-    task = taskTitle.value
+    const task = taskTitle.value
     if (task.length == 0) {
         alert("The text box is empty. Please enter the task title.")
     } else {
@@ -15,7 +15,7 @@ addButton.addEventListener("click", function() {
 
         // create "input" and assign attribute (type / "checkbox")
         const taskInput = document.createElement("input")
-        taskInput.setAttribute("type", "checkbox")
+        taskInput.setAttribute("type", "checkbox") // Can use "input.type = 'checkbox'" instead.
 
         // create "label" and assign attribute (class) & and add task title into the label
         const taskLabel = document.createElement("label")
@@ -39,12 +39,13 @@ addButton.addEventListener("click", function() {
         // triggering the remove button
         taskRemoveButton.addEventListener("click", function() {
             this.parentElement.parentElement.removeChild(this.parentElement)
+                // Or, this.parentElement.remove()
         })
 
 
         // triggering the checkbox
         taskInput.addEventListener("change", function() {
-            if (taskInput.checked) {
+            if (this.checked) {
                 // boxContainer.removeChild(taskDiv)
                 boxContainer2.appendChild(taskDiv)
             } else {

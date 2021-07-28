@@ -1,0 +1,45 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#container {
+    margin: 5% 20%;
+}
+
+#container h1 {
+    font-size: xxx-large;
+}
+
+#navigation {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+#navigation button {
+    margin: 10px;
+    border: none;
+    background-color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#menuItem {
+    display: flex;
+    flex-direction: column;
+}
+
+#dish {
+    display: flex;
+    flex-direction: row;
+    margin: 5%;
+}
+
+#dish img {
+    width: 40%;
+    height: 250px;
+}
+
+#description {
+    margin: 10%;
+}
