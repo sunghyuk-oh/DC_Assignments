@@ -17,7 +17,7 @@ const allMenu = dishes.map(function(dish) {
         </div>
     `
 })
-menuItem.innerHTML = '<h3>All Menu</h3>'
+
 menuItem.innerHTML = allMenu.join("")
 
 
