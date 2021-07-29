@@ -11,6 +11,10 @@ header h1 {
     text-align: center;
 }
 
+#dropdown {
+    text-align: center;
+}
+
 #mainContent {
     display: flex;
     flex-direction: column;
