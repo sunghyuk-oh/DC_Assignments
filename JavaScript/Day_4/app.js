@@ -7,9 +7,15 @@ const sourcesInfo = sources.sources
 // Adding the articles into the main content div
 function display_articles(articles) {
     const articleContents = articles.map((article) => {
-        // if (Object.values(article) == null) {
-        //     Object.values(article) = "None"
-        // }
+        if (article.title == null) {
+            article.title = ""
+        }
+        if (article.author == null) {
+            article.author = ""
+        }
+        if (article.description == null) {
+            article.description = ""
+        }
         return `
             <div id="article"> 
                 <h2>${article.title}</h2>
