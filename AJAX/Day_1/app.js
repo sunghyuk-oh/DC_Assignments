@@ -6,23 +6,6 @@ const result = new XMLHttpRequest()
 result.open("GET", batmanURL)
 result.send()
 
-// 1. Calling the movie titles from the first API file
-result.addEventListener("load", function() {
-    const batmanMovies = JSON.parse(this.responseText)
-
-    let movieItems = batmanMovies.Search.map(function(movieItem) {
-        item = `
-            <li class="movie">
-                <img src="${movieItem.Poster}"></img>
-                <p><b>${movieItem.Title}</b></p>
-                <button data-movieId='${movieItem.imdbID}' onclick="displayDetails(this)">Show Details</button>
-            </li>`
-
-        return item
-    })
-    movieLists.innerHTML = movieItems.join("")
-})
-
 // // 2. Calling the movie details from the second API file
 function displayDetails(btn) {
     const movieId = btn.getAttribute('data-movieId')
@@ -54,3 +37,20 @@ function displayDetails(btn) {
         container.innerHTML = detailItem
     })
 }
+
+// 1. Calling the movie titles from the first API file
+result.addEventListener("load", function() {
+    const batmanMovies = JSON.parse(this.responseText)
+
+    let movieItems = batmanMovies.Search.map(function(movieItem) {
+        const item = `
+            <li class="movie">
+                <img src="${movieItem.Poster}"></img>
+                <p><b>${movieItem.Title}</b></p>
+                <button data-movieId='${movieItem.imdbID}' onclick="displayDetails(this)">Show Details</button>
+            </li>`
+
+        return item
+    })
+    movieLists.innerHTML = movieItems.join("")
+})
