@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Sung's Cafe!</h1>
+    </header>
+
+    <section id="container">
+        <form id="orderCoffee">
+            <input type="text" id="emailTextBox" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" placeholder="Type Your Email" required/>
+            <input type="text" id="typeTextBox" placeholder="Coffee Type" required />
+            <input type="text" id="sizeTextBox" placeholder="Coffee Size: Small, Medium, Large" required />
+            <button id="orderButton">Order</button>
+        </form>
+        <form id="findCoffee">
+            <input type="text" id="emailTextBox2" placeholder="Type Your Email" required/>
+            <button id="findButton">Find the order</button>
+        </form>
+        <form id="deleteCoffee">
+            <input type="text" id="emailTextBox3" placeholder="Type Your Email" required/>
+            <button id="deleteButton">Delete the order</button>
+        </form>
+        <div id="displayCoffee">
+            <h2>Received Orders</h2>
+            <ul id="coffeeUL">
+
+            </ul>
+        </div>
+    </section>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
