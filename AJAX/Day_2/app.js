@@ -48,7 +48,9 @@ function displayOrders(coffee) {
     coffeeUL.innerHTML = coffeeItems.join("")
 }
 
-getOrders(function(coffee) { displayOrders(coffee) }, orderURL)
+getOrders(function(coffee) {
+    displayOrders(coffee)
+}, orderURL)
 
 
 
@@ -111,8 +113,7 @@ findButton.addEventListener("click", function(event) {
 
 
 // NOTES - Delete the order by email address
-deleteButton.addEventListener("click", function(e) {
-    e.preventDefault()
+deleteButton.addEventListener("click", function() {
     const email = emailTextBox3.value
     deleteResult = new XMLHttpRequest()
 
@@ -121,7 +122,7 @@ deleteButton.addEventListener("click", function(e) {
 
     deleteResult.addEventListener("load", function() {
         const items = JSON.parse(this.responseText)
-        console.log(items)
+
         const coffeeItems = items.map(function(item) {
             return `<li>
                         <p>${item.email}</p>
