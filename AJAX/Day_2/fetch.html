@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice AJAX</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Cafe</h1>
+    </header>
+
+    <section id="container">
+        <div id="orderCoffee">
+            <input type="text" id="emailTextBox" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" placeholder="Type Your Email" required/>
+            <input type="text" id="typeTextBox" placeholder="Coffee Type" required />
+            <input type="text" id="sizeTextBox" placeholder="Coffee Size: Small, Medium, Large" required />
+            <button id="orderButton">Order</button>
+        </div>
+        <div id="findDeleteCoffee">
+            <input type="text" id="emailTextBox2" placeholder="Type Your Email" required/>
+            <button id="findButton">Find the order</button>
+            <button id="deleteButton">Delete the order</button>
+        </div>
+
+        <div id="displayCoffee">
+            <h2>Received Orders</h2>
+            <ul id="coffeeUL">
+
+            </ul>
+        </div>
+    </section>
+
+
+    <script src="fetch.js"></script>
+</body>
+
+</html>

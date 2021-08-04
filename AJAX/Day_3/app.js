@@ -40,3 +40,11 @@ submitButton.addEventListener('click', function() {
     const cityName = cityNameText.value
     getWeatherInfo(cityName)
 })
+
+navigator.geolocation.getCurrentPosition(function(position) {
+    let lat = position.coords.latitude;
+    let long = position.coords.longitude;
+
+    console.log(lat)
+    console.log(long)
+})
