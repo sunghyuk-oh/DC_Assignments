@@ -8,13 +8,13 @@ const coffeeUL = document.getElementById('coffeeUL')
 
 const ORDER_URL = 'https://troubled-peaceful-hell.glitch.me/orders'
 
-// NOTES Display the order found by Email
+// NOTES - Display the order found by Email
 function displaySearchOrders(orders) {
     const foundOrder = `<li>${orders.email} | ${orders.type} | ${orders.size} | $${orders.price}</li>`
     coffeeUL.innerHTML = foundOrder
 }
 
-// NOTES Find the order by Email
+// NOTES - Find the order by Email
 function searchOrders() {
     const findEmail = emailTextBox2.value
     const FIND_ORDER_URL = `https://troubled-peaceful-hell.glitch.me/orders/${findEmail}`
@@ -24,14 +24,14 @@ function searchOrders() {
     }, FIND_ORDER_URL)
 }
 
-// NOTES Display all orders after adding or deleting order item
+// NOTES - Display all orders after adding or deleting order item
 function populateAllOrders() {
     fetchOrders(function(orders) {
         displayOrders(orders)
     }, ORDER_URL)
 }
 
-// NOTES Delete the order by Email
+// NOTES - Delete the order by Email
 function deleteOrders() {
     const emailAddress = emailTextBox2.value
     const DELETE_ORDER_URL = `https://troubled-peaceful-hell.glitch.me/orders/${emailAddress}`
@@ -47,7 +47,7 @@ function deleteOrders() {
     })
 }
 
-// NOTES Add the order
+// NOTES - Add the order
 function addOrders(order) {
     fetch(ORDER_URL, {
         method: 'POST',
@@ -63,7 +63,7 @@ function addOrders(order) {
     })
 }
 
-// NOTES display all orders
+// NOTES - Display all orders
 function displayOrders(orders) {
     const orderItems = orders.map((item) => {
         return `<li>${item.email} | ${item.type} | ${item.size} | $${item.price}</li>`
@@ -72,7 +72,7 @@ function displayOrders(orders) {
     coffeeUL.innerHTML = orderItems.join("")
 }
 
-// NOTES Fetch all orders from the API file
+// NOTES - Fetch all orders from the API file
 function fetchOrders(ordersDisplay, url) {
     fetch(url)
         .then(function(request) {
@@ -86,13 +86,13 @@ function fetchOrders(ordersDisplay, url) {
         })
 }
 
-// NOTES Call the fetchOrder function
+// NOTES - Call the fetchOrder function
 fetchOrders(function(orders) {
     displayOrders(orders)
 }, ORDER_URL)
 
 
-// NOTES Buttons EventHandlers
+// NOTES - Buttons EventHandlers
 orderButton.addEventListener('click', function() {
     const order = {
         email: emailTextBox.value,
