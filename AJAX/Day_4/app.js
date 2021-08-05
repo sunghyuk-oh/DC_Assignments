@@ -7,12 +7,12 @@ function displayNews(newsItems) {
     displayNewsUL.insertAdjacentHTML('beforeend', news)
 }
 
-async function sortNewsById(idData) {
+async function sortNewsById(idData, newsDownloaded) {
     for (let i = 0; i < idData.length; i++) {
         try {
             let response = await fetch(`https://hacker-news.firebaseio.com/v0/item/${idData[i]}.json?print=pretty`)
             let newsItems = await response.json()
-            displayNews(newsItems)
+            newsDownloaded(newsItems)
         } catch (error) {
             console.log(error)
         }
@@ -25,4 +25,8 @@ async function findId(idDownloaded) {
     idDownloaded(newsId)
 }
 
-findId((idData) => sortNewsById(idData))
+findId((idData) => {
+    sortNewsById(idData, (newsItem) => {
+        displayNews(newsItem)
+    })
+})
