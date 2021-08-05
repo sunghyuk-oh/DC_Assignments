@@ -35,6 +35,7 @@ function populateAllOrders() {
 function deleteOrders() {
     const emailAddress = emailTextBox2.value
     const DELETE_ORDER_URL = `https://troubled-peaceful-hell.glitch.me/orders/${emailAddress}`
+
     fetch(DELETE_ORDER_URL, {
         method: 'DELETE'
     }).then(response => {

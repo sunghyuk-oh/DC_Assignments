@@ -9,14 +9,14 @@ const submitButton = document.getElementById("submitButton")
 const displayWeatherDiv = document.getElementById("displayWeatherDiv")
 
 
-function getWeatherInfo(cName) {
+function getWeatherInfo(cName, weatherdownloaded) {
     const WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cName}&appid=15db85aec88171ae528b5d10383b2d7e&units=imperial`
     fetch(WEATHER_URL)
         .then(response => {
             return response.json()
         }).then(result => {
             console.log(result)
-            displayWeather(result)
+            weatherdownloaded(result)
         }).catch(error => {
             console.log(error)
         })
@@ -32,15 +32,17 @@ function displayWeather(info) {
     displayWeatherDiv.innerHTML = weatherInfoLabel
 }
 
-getWeatherInfo(function(result) {
-    displayWeather(result)
-})
 
 submitButton.addEventListener('click', function() {
     const cityName = cityNameText.value
-    getWeatherInfo(cityName)
+
+    getWeatherInfo(cityName, function(result) {
+        displayWeather(result)
+    })
+
 })
 
+/*
 navigator.geolocation.getCurrentPosition(function(position) {
     let lat = position.coords.latitude;
     let long = position.coords.longitude;
@@ -48,3 +50,4 @@ navigator.geolocation.getCurrentPosition(function(position) {
     console.log(lat)
     console.log(long)
 })
+*/
