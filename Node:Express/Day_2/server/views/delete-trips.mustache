@@ -1,0 +1,21 @@
+<html>
+
+    <head>
+    </head>
+
+    <body>
+        <h1>Cancel Your Trips</h1>
+        <ul>
+        {{#allTrips}}
+            <li>
+                <form method="POST" action="/delete-trips">
+                    {{title}} - {{image}} - {{departureDate}} - {{returnDate}}
+                    <input type='hidden' value={{id}} name="deletedTrip" />
+                    <button>Cancel</button>
+                </form>
+            </li>
+        {{/allTrips}}
+        </ul>
+    </body>
+
+</html>

@@ -9,7 +9,7 @@ const cors = require('cors')
 app.use(cors())
 
 app.get('/todo', (req, res) => {
-    res.send(tasks)
+    res.json(tasks)
 })
 
 app.post('/todo', (req, res) => {
@@ -21,22 +21,12 @@ app.post('/todo', (req, res) => {
     tasks.push({ "id": id, "title": title, "priority": priority, "date": date })
 
     res.json({ success: true, message: "New task has been added" })
-
 })
 
 app.delete('/todo/:id', (req, res) => {
-    const deletedId = req.params.id
+    const deletedId = parseInt(req.params.id)
 
-    const itemIndex = tasks.findIndex((item) => {
-        console.log(item.id)
-        console.log(deletedId)
-        item.id === deletedId
-    });
-    console.log(itemIndex)
-    if (itemIndex >= 0) {
-        tasks.splice(itemIndex - 1, 1);
-    }
-    // tasks = tasks.filter((item) => item.id !== deletedId);
+    tasks = tasks.filter((task) => task.id !== deletedId)
 
     res.json({ success: true, message: "The task has been deleted" })
 })
