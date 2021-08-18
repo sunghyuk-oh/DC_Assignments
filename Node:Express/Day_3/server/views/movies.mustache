@@ -1,0 +1,49 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Movies</h1>
+    </header>
+    
+    <section id="addMovie">
+        <form method="POST" action="/movies/create">
+            <h4>Add a movie: </h4>
+            <input type="text" placeholder="Enter Title" name="movieTitle" required />
+            <input type="text" placeholder="Enter Description" name="movieDescription" required />
+            <input type="text" placeholder="Enter Genre" name="movieGenre" required />
+            <input type="text" placeholder="Enter Post URL" name="moviePosterUrl" />
+            <button>Create</button>
+        </form>
+    </section>
+    
+    <section id="searchMovie">
+        <form method="POST" action="/movies/{{movieId}}">
+            <h4>Search a movie by Genre: </h4>
+            <input type="text" placeholder="Enter movie id" name="searchedId" required />
+            <button>Search</button>
+        </form>
+    </section>
+
+    <section id="displayContent">
+        <ul>
+        {{#movieLists}}
+            <li>
+                <img src="{{moviePosterUrl}}" style="width:10%;height:30%"/>
+                <p><b>Title: </b>{{movieTitle}}</p>
+                <p><b>Description: </b>{{movieDescription}}</p>
+                <p><b>Genre: </b>{{movieGenre}}</p>
+                <a href='/movies/{{movieId}}'>Click here for Details</a>
+                <form method="POST" action="/movies/delete">
+                    <input type="hidden" value={{movieId}} name="deletedMovieId" />
+                    <button>Delete</button>
+                </form>
+            </li>
+        {{/movieLists}}
+        </ul>
+    </section>
+</body>
+
+</html>
