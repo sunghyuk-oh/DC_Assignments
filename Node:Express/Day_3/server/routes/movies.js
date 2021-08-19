@@ -37,7 +37,7 @@ router.post('/delete', (req, res) => {
 
 router.get('/:movieId', (req, res) => {
     let movieId = parseInt(req.params.movieId)
-    console.log(movieId)
+
     let oneMovie = movies.find((movie) => {
         return movie.movieId == movieId
     })
