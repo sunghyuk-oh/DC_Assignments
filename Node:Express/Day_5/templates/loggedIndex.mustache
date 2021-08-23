@@ -1,0 +1,42 @@
+<html>
+    <head>
+    </head>
+
+    <body>
+        <header>
+            <h1>TripsFinder</h1>
+            <h4>Description<h4>
+        </header>
+        
+        <main>
+            <div>
+                <form method="POST" action="/users/logout">
+                    <button>Logout</button>
+                </form>
+            </div>
+            <form method="POST" action="/trips/add-trips">
+                <h5>Book Your Trips</h5>
+                <input type="text" placeholder="Enter the city" name="title" />
+                <input type="text" placeholder="Enter the image url" name="image" />
+                <input type="date" placeholder="Enter the date of departure" name="departureDate" />
+                <input type="date" placeholder="Enter the date of return" name="returnDate" />
+                <button>Book</button>
+            </form>
+
+            {{#allTrips}}
+            <ul>
+                <form method="POST" action="/trips/delete-trips">
+                    <p><b>Trips to:</b> {{title}}</p>  
+                    {{image}} 
+                    <p><b>Date of departure:</b> {{departureDate}}</p>
+                    <p><b>Date of return:</b> {{returnDate}}</p>
+                    <input type='hidden' value={{id}} name="deletedId" />
+                    <button>Cancel</button>
+                </form>
+            </ul>
+            {{/allTrips}}
+
+        </main>
+    </body>
+
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <h1>Blogs</h1>
+
+        <form method="POST" action="/add-blogs">
+            <h5>Add a blog</h5>
+            <input type="text" placeholder="Enter the title" name="title" />
+            <input type="text" placeholder="Enter the body text" name="bodyText" />
+            <button>Post a blog</button>
+        </form>
+        <ul>
+        {{#allBlogs}}
+            <li>
+                <a href='/blogs/{{post_id}}'><h3>Title: {{title}}</h3></a>
+            </li>
+        {{/allBlogs}}
+        </ul>
+        
+    </body>
+
+</html>

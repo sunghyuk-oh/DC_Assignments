@@ -1,0 +1,24 @@
+<html>
+    <head>
+    </head>
+
+    <body>
+        <header>
+            <h1>TripsFinder</h1>
+            <h4>Description<h4>
+        </header>
+        
+        <main>
+            {{message}}
+            <form method="POST" action="/users/login">
+                <h4>Login</h4>
+                <input type="text" placeholder="Enter the username" name="username" />
+                <input type="password" placeholder="Enter the password" name="password" />
+                <button>Login</button>
+                <a href="/users/signUp">Sign Up</a>
+            </form>
+        
+        </main>
+    </body>
+
+</html>
