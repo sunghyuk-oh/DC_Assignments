@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        
+        <h2>Title: {{title}}</h3></a>
+        <p>{{body}}</p>  
+        <p><b>Created Date: </b> {{date_created}}</p>
+        <p><b>Updated Date: </b> {{date_updated}}</p>
+        <form method="POST" action="/delete-blogs">
+            <input type='hidden' value={{post_id}} name="deletedId" />
+            <button>Delete</button>
+        </form>
+        <button id="updateBtn">Update</button>
+        <form id="updateForm" method="POST" action="/update-blogs">
+                <input type='hidden' value={{post_id}} name="postId" />
+                <input type="text" placeholder="Enter the title" name="title" />
+                <input type="text" placeholder="Enter the body text" name="bodyText" />
+                <button>Update a blog</button>
+        </form>
+        <form id='commentTextbox'>
+            <input type='hidden' value={{post_id}} name="postId" />
+            <input type='text' id="commentBody" placeholder="Leave a comment.." />
+            <button>Comment</button>
+        </form>
+        <script src="/async.js"></script>
+    </body>
+
+</html>

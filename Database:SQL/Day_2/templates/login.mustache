@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <h1>Blogs Website</h1>
+        {{message}}
+        {{errorMessage}}
+        <form method="POST" action="/login">
+            <h2>Log In</h2>
+            <input type="text" placeholder="Username" name="username" />
+            <input type="password" placeholder="Password" name="password" />
+            <button>Login</button>
+            <a href="/signup">Sign Up</a>
+        </form>
+    </body>
+
+</html>

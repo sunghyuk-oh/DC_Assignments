@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <h1>Blogs</h1>
+        {{welcomeMsg}}
+        <form method="POST" action="/logout">
+            <button>Logout</button>
+        </form>
+        <form method="POST" action="/add-blogs">
+            <h3>Post your blog</h3>
+            <input type="text" placeholder="Enter the title" name="title" />
+            <input type="text" placeholder="Enter the body text" name="bodyText" />
+            <button>Post</button>
+        </form>
+        <ul>
+        {{#allBlogs}}
+            <li>
+                <a href='/blogs/{{post_id}}'><h3>Title: {{title}}</h3></a>
+            </li>
+        {{/allBlogs}}
+        </ul>
+        
+    </body>
+
+</html>
