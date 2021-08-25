@@ -23,6 +23,8 @@ const authentication = require('./authentication/auth')
 app.use(express.static('public'))
 
 app.use(express.urlencoded())
+app.use(express.json())
+
 
 
 
@@ -78,20 +80,20 @@ app.post('/update-blogs', (req, res) => {
 })
 
 // NOTES  - Leave comments
-// app.get('/leave-comments', (req, res) => {
+app.get('/api/get-comments', (req, res) => {
 
-//     db.any('SELECT comment_id, body FROM comments INNER JOIN blogs On comments.post_id = blogs.post_id').then(() => {
-//         res.render('blogDetails')
-//     })
-// })
+    db.any('SELECT comment_id, comments.body FROM comments INNER JOIN blogs ON comments.post_id = blogs.post_id').then((comments) => {
+        res.json(comments)
+    })
+})
 
 app.post('/leave-comments', (req, res) => {
     const comment = req.body.comment
     const postId = req.body.postId
 
-    db.any('INSERT INTO comments (body, post_id) VALUES ($1, $2)', [comment, postId])
-
-    res.render(blogDetails)
+    db.none('INSERT INTO comments (body, post_id) VALUES ($1, $2)', [comment, postId]).then(() => {
+        res.json({ success: true })
+    })
 })
 
 // NOTES  - Register a username and password

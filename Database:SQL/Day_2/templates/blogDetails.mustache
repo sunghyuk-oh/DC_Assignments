@@ -20,8 +20,9 @@
                 <input type="text" placeholder="Enter the body text" name="bodyText" />
                 <button>Update a blog</button>
         </form>
+        <div id="commentsDisplay"></div>
         <form id='commentTextbox'>
-            <input type='hidden' value={{post_id}} name="postId" />
+            <input type='hidden' id="idTextBox" value={{post_id}} name="postId" />
             <input type='text' id="commentBody" placeholder="Leave a comment.." />
             <button>Comment</button>
         </form>
