@@ -1,0 +1,15 @@
+.nav {
+    display: flex;
+    background-color: #52a7fa;
+    color: white;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.nav h1 {
+    margin-right: 3rem;
+}
+
+.nav h3 {
+    margin: auto 2rem;
+}

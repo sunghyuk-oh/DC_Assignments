@@ -1,0 +1,20 @@
+.main-content {
+    margin: 2rem;
+}
+
+.eachArticle h3 {
+    font-size: x-large;
+    font-weight: 400;
+    color: #2768c0;
+}
+
+.moreInfoBox {
+    display: flex;
+    background-color: #f39017;
+    padding: 0 1rem;
+}
+
+.moreInfoBox h5 {
+    color: white;
+    margin-right: 3rem;
+}
