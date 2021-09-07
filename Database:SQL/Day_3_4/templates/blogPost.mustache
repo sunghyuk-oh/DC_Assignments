@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <nav>
+            <a href="/blog/post-blog">Post a blog</a>
+            <form method="POST" action="/index/logout">
+                <button>Logout</button>
+            </form>
+        <nav>
+        {{welcomeMsg}}
+        <h1>Blogs</h1>
+        <form method="POST" action="/blog/add-blog">
+            <h3>Post your blog</h3>
+            <input type="text" placeholder="Enter the title" name="title" />
+            <input type="text" placeholder="Enter the body text" name="bodyText" />
+            <input type="date" placeholder="Enter today's date" name="postDate" />
+            <button>Post</button>
+        </form>
+        
+    </body>
+
+</html>

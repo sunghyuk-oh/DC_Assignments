@@ -42,5 +42,4 @@ commentTextbox.addEventListener('submit', (e) => {
         .then(result => {
             displayComments()
         })
-
 })

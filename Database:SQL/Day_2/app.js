@@ -26,8 +26,6 @@ app.use(express.urlencoded())
 app.use(express.json())
 
 
-
-
 // NOTES  - Display the main page (login)
 app.get('/', (req, res) => {
     res.render('login')
@@ -44,7 +42,7 @@ app.get('/blogs', authentication, (req, res) => {
 app.get('/blogs/:id', authentication, (req, res) => {
     const id = req.params.id
     db.one('SELECT post_id, title, body, date_created, date_updated FROM blogs WHERE post_id = $1', [id]).then(blog => {
-
+        console.log(blog)
         res.render('blogDetails', blog)
     })
 })

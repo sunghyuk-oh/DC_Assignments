@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <nav>
+            <a href="/blog/post-blog">Post a blog</a>
+            <a href="/index/login">Login</a>
+            <a href="/index/register"><button>Create Account</button></a>
+        <nav>
+        <h1>Blogs</h1>
+        {{errorMessage}}
+        {{welcomeMsg}}
+        
+        <h3>This is home page<h3>
+        <ul>
+        {{#allBlogs}}
+            <li>
+                <a href='/blogs/{{post_id}}'><h3>Title: {{title}}</h3></a>
+                <p>{{post_date}}</p>
+                <p>{{body}}</p>
+            </li>
+        {{/allBlogs}}
+        </ul>
+        
+    </body>
+
+</html>

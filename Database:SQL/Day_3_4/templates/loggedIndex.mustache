@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <nav>
+            <a href="/blog/post-blog">Post a blog</a>
+            <form method="POST" action="/index/logout">
+                <button>Logout</button>
+            </form>
+        <nav>
+        {{welcomeMsg}}
+        <h3>This is home page after logging in<h3>
+        
+        <ul>
+        {{#allBlogs}}
+            <li>
+                <a href='/blogs/{{post_id}}'><h3>Title: {{title}}</h3></a>
+                <p>{{post_date}}</p>
+                <p>{{body}}</p>
+            </li>
+        {{/allBlogs}}
+        </ul>
+        
+    </body>
+
+</html>

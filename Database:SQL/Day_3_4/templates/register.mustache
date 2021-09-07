@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <h1>Blogs Website</h1>
+
+        <form method="POST" action="/index/register">
+            <h2>Sign Up</h2>
+            {{errorMessage}}
+            <input type="text" placeholder="First Name" name="firstName" />
+            <input type="text" placeholder="Last Name" name="lastName" />
+            <input type="text" placeholder="Username" name="username" />
+            <input type="password" placeholder="Password" name="password" />
+            <button>Sign up</button>
+        </form>
+    </body>
+
+</html>
