@@ -1,0 +1,14 @@
+.bookDisplay {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.eachBook {
+    margin: 2rem;
+    width: 400px;
+}
+.eachBook img {
+    width: 400px;
+    height: 450px;
+}
