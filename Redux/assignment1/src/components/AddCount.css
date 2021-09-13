@@ -1,0 +1,21 @@
+.App {
+    text-align: center;
+    background-color: aquamarine;
+    margin: 20vh 40vw;
+    padding: 10vh;
+  }
+  
+  button {
+    border: none;
+    margin: 5px;
+    padding: 10px;
+    background-color: cadetblue;
+  }
+  
+  button:hover {
+    background-color: darkblue;
+    color: white;
+  }
+  
+  
+  
