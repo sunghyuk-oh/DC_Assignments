@@ -1,0 +1,14 @@
+#navlink {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline;
+    margin-right: 20px;
+    text-decoration: none;
+}
