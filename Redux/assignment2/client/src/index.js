@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import DisplayCart from './components/DisplayCart';
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
@@ -22,6 +23,7 @@ ReactDOM.render(
             <Route component={App} exact path='/' />
             <Route component={AddBook} path='/add-book' />
             <Route component={DeleteBook} path='/delete-book' />
+            <Route component={DisplayCart} pat='/view-cart' />
           </Switch>
         </BaseLayout>
       </BrowserRouter>

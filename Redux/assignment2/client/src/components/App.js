@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import * as actionCreator from '../stores/creators/actionCreate'
 
 function App(props) {
-  
+  // Fetching the books from the database
   useEffect(() => {
     fetch('http://localhost:8080/api/books')
     .then(response => response.json())
@@ -13,13 +13,33 @@ function App(props) {
     })
   }, [])
 
+
+  // Add the books to the cart
+  const handleAddCart = (bookIdentifier) => {
+    props.onAddCart()
+
+    console.log(bookIdentifier)
+    fetch('http://localhost:8080/api/add-cart', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ "bookId": bookIdentifier })
+    })
+    .then(response => response.json())
+    .then((result) => {
+        if (result.success) {
+            console.log('the book has been added to the cart')
+        }
+    })
+  }
+
   const books = props.allBooks.map(book => {
     return <div key={book.book_id} className="eachBook">
-              <img src={book.imageurl} />
+              <img className="bookImg" src={book.imageurl} />
               <h3>{book.title}</h3>
-              <p><b>Genre:</b>{book.genre}</p>
-              <p><b>Year:</b>{book.year}</p>
-              <p><b>Publisher:</b>{book.publisher}</p>
+              <p><b>Genre: </b>{book.genre}</p>
+              <p><b>Year: </b>{book.year}</p>
+              <p><b>Publisher: </b>{book.publisher}</p>
+              <button onClick={() => handleAddCart(book.book_id)} >Add to cart</button>
             </div>
   })
 
@@ -39,10 +59,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onFetchBooks: (books) => dispatch(actionCreator.fetchBooks(books))
+    onFetchBooks: (books) => dispatch(actionCreator.fetchBooks(books)),
+    onAddCart: () => dispatch(actionCreator.addCarts())
   }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
-// { type: 'FETCH_BOOKS', payload: books }
+

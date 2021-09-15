@@ -1,7 +1,8 @@
+import { connect } from 'react-redux'
 import { NavLink } from "react-router-dom"
 import './css/Menu.css'
 
-export function Menu() {
+export function Menu(props) {
     return (
         <nav id="navlink">
             <div id="left-menu">
@@ -15,11 +16,17 @@ export function Menu() {
                 <ul>
                     <li><NavLink to="/login">Login</NavLink></li>
                     <li><NavLink to="/register">Register</NavLink></li>
-                    <li><NavLink to="/cart">Cart</NavLink></li>
+                    <li><NavLink to="/cart">Cart ({props.cartCtr})</NavLink></li>
                 </ul>
             </div>
         </nav>
     )
 }
 
-export default Menu
+const mapStateToProps = (state) => {
+    return {
+        cartCtr: state.cartCounter
+    }
+}
+
+export default connect(mapStateToProps)(Menu)

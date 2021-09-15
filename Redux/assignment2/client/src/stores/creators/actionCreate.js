@@ -6,3 +6,9 @@ export const fetchBooks = (value) => {
         payload: value
     }
 }
+
+export const addCarts = () => {
+    return {
+        type: actionTypes.ADD_CART
+    }
+}

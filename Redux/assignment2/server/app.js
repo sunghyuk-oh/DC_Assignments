@@ -28,4 +28,18 @@ app.post('/api/add-book', (req,res) => {
     .catch(error => console.log(error))
 })
 
+app.post('/api/add-cart', (req, res) => {
+    const { bookId } = req.body
+
+    db.none('INSERT INTO carts (book_id) VALUES ($1)', [bookId])
+    .then(() => res.json({success: true}))
+    .catch(error => console.log(error))
+})
+
+app.get('/api/view-cart', (req, res) => {
+    db.any('SELECT books.title, books.genre, books.imageurl FROM carts INNER JOIN books ON carts.book_id = books.book_id')
+    .then(books => res.json(books))
+    .catch(error => console.log(error))
+})
+
 app.listen(process.env.PORT, () => console.log('Server is running...'))
