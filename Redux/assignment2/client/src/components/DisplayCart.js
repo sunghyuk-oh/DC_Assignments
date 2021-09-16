@@ -1,19 +1,33 @@
 import { useEffect } from 'react'
 import { connect } from 'react-redux'
+import * as actionCreator from '../stores/creators/actionCreate'
 
 function DisplayCart(props) {
     useEffect(() => {
-        fetch('http://localhost:8080/api/view-cart')
-        .then(response => response.json())
-        .then(books => props.onAddCartItems(books))
+        props.onAddCartItems()
     }, [])
+
+    const handleDeleteCartItem = (cartId) => {
+        fetch('http://localhost:8080/api/delete-cart-item', {
+            method: "DELETE",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({ "cartId": cartId })
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                console.log('The book item has been deleted from the cart.')
+                props.onAddCartItems()
+            }
+        })
+    }
 
     const allItems = props.cartItems.map((item, index) => {
         return <div key={index} className="eachCartItem">
                     <img className="bookImg" src={item.imageurl} />
                     <h4>{item.title}</h4>
                     <p><b>Genre: </b>{item.genre}</p>
-                    <button>Delete</button>
+                    <button onClick={() => handleDeleteCartItem(item.cart_id)}>Delete</button>
                 </div>
     })
 
@@ -32,7 +46,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onAddCartItems: (books) => dispatch({type: "CART_ITEMS", payload: books})
+        onAddCartItems: () => dispatch(actionCreator.fetchCartItems())
     }
 }
 

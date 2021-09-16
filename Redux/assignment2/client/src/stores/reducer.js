@@ -2,8 +2,7 @@ import * as actionType from '../stores/actions/actionTypes'
 
 const initialState = {
     books: [],
-    cartCounter: 0,
-    cartItems: []
+    cartItems: [],
 }
 
 const reducer = (state=initialState, action) => {
@@ -13,12 +12,7 @@ const reducer = (state=initialState, action) => {
                 ...state,
                 books: action.payload
             }
-        case actionType.ADD_CART:
-            return {
-                ...state,
-                cartCounter: state.cartCounter + 1
-            }
-        case "CART_ITEMS":
+        case actionType.CART_ITEMS:
             return {
                 ...state,
                 cartItems: action.payload

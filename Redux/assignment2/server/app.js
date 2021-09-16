@@ -37,8 +37,16 @@ app.post('/api/add-cart', (req, res) => {
 })
 
 app.get('/api/view-cart', (req, res) => {
-    db.any('SELECT books.title, books.genre, books.imageurl FROM carts INNER JOIN books ON carts.book_id = books.book_id')
+    db.any('SELECT books.title, books.genre, books.imageurl, carts.cart_id FROM carts INNER JOIN books ON carts.book_id = books.book_id')
     .then(books => res.json(books))
+    .catch(error => console.log(error))
+})
+
+app.delete('/api/delete-cart-item', (req, res) => {
+    const {cartId} = req.body
+
+    db.none('DELETE FROM carts WHERE cart_id = $1', [cartId])
+    .then(res.json({ success: true }))
     .catch(error => console.log(error))
 })
 

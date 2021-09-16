@@ -1,2 +1,2 @@
 export const FETCH_BOOKS = 'FETCH_BOOKS'
-export const ADD_CART = 'ADD_CART'
+export const CART_ITEMS = 'CART_ITEMS'
