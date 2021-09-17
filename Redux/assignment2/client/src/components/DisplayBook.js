@@ -1,6 +1,7 @@
 import './css/App.css'
 import { connect } from 'react-redux'
 import * as actionCreator from '../stores/creators/actionCreate'
+import './css/BookDisplay.css'
 
 function DisplayBook(props) {
 

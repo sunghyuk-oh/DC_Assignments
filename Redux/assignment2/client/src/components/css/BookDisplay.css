@@ -1,0 +1,10 @@
+#book-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.bookImg {
+    width: 20rem;
+    height: 25rem;
+}

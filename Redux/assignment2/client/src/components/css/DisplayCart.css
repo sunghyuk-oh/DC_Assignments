@@ -1,0 +1,19 @@
+#cart-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.eachCartItem {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem;
+    background-color: beige;
+    padding: 1rem;
+}
+
+.bookImage {
+    width: 5rem;
+    height: 8rem;
+    border-radius: 1em;
+}

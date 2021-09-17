@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { connect } from 'react-redux'
 import * as actionCreator from '../stores/creators/actionCreate'
+import './css/DisplayCart.css'
 
 function DisplayCart(props) {
     useEffect(() => {
@@ -24,7 +25,7 @@ function DisplayCart(props) {
 
     const allItems = props.cartItems.map((item, index) => {
         return <div key={index} className="eachCartItem">
-                    <img className="bookImg" src={item.imageurl} />
+                    <img className="bookImage" src={item.imageurl} />
                     <h4>{item.title}</h4>
                     <p><b>Genre: </b>{item.genre}</p>
                     <button onClick={() => handleDeleteCartItem(item.cart_id)}>Delete</button>
@@ -33,7 +34,7 @@ function DisplayCart(props) {
 
     return (
         <main>
-             <div>{allItems}</div>
+             <div id="cart-content">{allItems}</div>
         </main>
     )
 }

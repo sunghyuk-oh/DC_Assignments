@@ -1,10 +1,8 @@
 import { connect } from 'react-redux'
 import { NavLink } from "react-router-dom"
 import './css/Menu.css'
-import * as actionCreator from '../stores/creators/actionCreate'
 
 export function Menu(props) {
-    props.onAddCartItems()
 
     return (
         <nav id="navlink">
@@ -29,10 +27,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onAddCartItems: () => dispatch(actionCreator.fetchCartItems())
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Menu)
+export default connect(mapStateToProps)(Menu)
